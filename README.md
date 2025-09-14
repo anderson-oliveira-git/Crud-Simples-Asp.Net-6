@@ -49,7 +49,7 @@ dotnet ef database update
 dotnet run
 ```
 
-A API estará disponível em: `https://localhost:7055` ou `;http://localhost:5192`.
+A API estará disponível em: `https://localhost:7055/swagger/index.html` ou `;http://localhost:5192/swagger/index.htm`.
 
 ---
 
