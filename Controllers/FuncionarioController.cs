@@ -15,7 +15,7 @@ public class FuncionarioController : ControllerBase
         _funcionarioInterface = funcionarioInterface;
     }
 
-    [HttpGet]
+    [HttpGet("listar")]
     public async Task<ActionResult<ServiceResponse<List<Funcionario>>>> GetFuncionarios()
     {
         var response = await _funcionarioInterface.GetFuncionarios();
@@ -29,14 +29,14 @@ public class FuncionarioController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPost]
+    [HttpPost("cadastrar")]
     public async Task<ActionResult<ServiceResponse<List<Funcionario>>>> CreateFuncionario(Funcionario funcionario)
     {
         var response = await _funcionarioInterface.CreateFuncionario(funcionario);
         return Ok(response);
     }
 
-    [HttpPut]
+    [HttpPut("atualizar")]
     public async Task<ActionResult<ServiceResponse<Funcionario>>> UpdateFuncionario(Funcionario funcionario)
     {
         var response = await _funcionarioInterface.UpdateFuncionario(funcionario);
@@ -50,7 +50,7 @@ public class FuncionarioController : ControllerBase
         return Ok(response);
     }
 
-    [HttpDelete]
+    [HttpDelete("deletar")]
     public async Task<ActionResult<ServiceResponse<Funcionario>>> DeleteFuncionario(int id)
     {
         var response = await _funcionarioInterface.DeleteFuncionario(id);
